@@ -1,4 +1,8 @@
-package PACKAGE_NAME;
-
 public class Evaluacion {
+    double resultado;
+
+
+    public void getResultado(){
+
+    }
 }

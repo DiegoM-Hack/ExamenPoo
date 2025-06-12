@@ -1,27 +1,58 @@
 @startuml
 'https://plantuml.com/class-diagram
 
-abstract class AbstractList
-abstract AbstractCollection
-interface List
-interface Collection
-
-List <|-- AbstractList
-Collection <|-- AbstractCollection
-
-Collection <|- List
-AbstractCollection <|- AbstractList
-AbstractList <|-- ArrayList
-
-class ArrayList {
-Object[] elementData
-size()
+abstract class Curso{
+-Materia: String
++mostrarResumen()
++asignarDocente(String docente)
+}
+class CursoRegular{
++nota:String
+}
+class CursoCertificado{
++certificar():void
++calcularPrecioFinal()
++mostrarResumen()
+}
+class Estudiante{
+-Nombre: String
+-Edad: String
++mostrarDatos()
++validarEdad()
+}
+class Docente{
+-Nombre: String
+-Asignatura: String
++calificar(): void
++mostrarPerfil()
+}
+class Matricula{
++registrar():void
++registrarEvaluacion()
++mostrarDetalle()
 }
 
-enum TimeUnit {
-DAYS
-HOURS
-MINUTES
+class Evaluacion{
+-nota: int
++getResultado()
 }
+class Main{
++ main(String[]) : void
+}
+
+Curso <|-- CursoRegular
+CursoRegular --|> CursoCertificado
+
+Estudiante --> Curso
+Docente --> Curso
+
+
+Matricula <|- Main
+
+Matricula --> Estudiante
+
+
+Estudiante --> Evaluacion
+
 
 @enduml
