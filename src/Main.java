@@ -5,15 +5,43 @@ public class Main {
 
         Scanner sc = new Scanner(System.in);
 
-        // Objetos con valores nulos
-        CursoRegular curso1 = new CursoRegular("Matemáticas");
-        CursoCertificado curso2 = new CursoCertificado("Programación", 200);
-        Estudiante estudiante1 = new Estudiante("Juan","Montaluisa", 15);
-        Docente docente1 = new Docente("Diego","Lopez",34,"Matematicas");
+        System.out.print("Ingrese el nombre del estudiante: ");
+        String nombreEstudiante = sc.nextLine();
+        System.out.print("Ingrese el apellido del estudiante: ");
+        String apellidoEstudiante = sc.nextLine();
+        System.out.print("Ingrese la edad del estudiante: ");
+        int edadEstudiante = sc.nextInt();
+        sc.nextLine(); // Limpiar el buffer
+
+        System.out.print("Ingrese el nombre del docente: ");
+        String nombreDocente = sc.nextLine();
+        System.out.print("Ingrese el apellido del docente: ");
+        String apellidoDocente = sc.nextLine();
+        System.out.print("Ingrese la edad del docente: ");
+        int edadDocente = sc.nextInt();
+        sc.nextLine(); // Limpiar el buffer
+        System.out.print("Ingrese la especialidad del docente: ");
+        String especialidad = sc.nextLine();
+
+        System.out.print("Ingrese el nombre del curso regular: ");
+        String nombreCurso = sc.nextLine();
+
+        System.out.print("Ingrese el nombre del curso certificado: ");
+        String nombreCursoCertificado = sc.nextLine();
+        System.out.print("Ingrese el costo del curso certificado: ");
+        double costoCursoCertificado = sc.nextDouble();
+
+        // Crear objetos con datos del usuario
+        CursoRegular curso1 = new CursoRegular(nombreCurso);
+        CursoCertificado curso2 = new CursoCertificado(nombreCursoCertificado, costoCursoCertificado);
+        Estudiante estudiante1 = new Estudiante(nombreEstudiante, apellidoEstudiante, edadEstudiante);
+        Docente docente1 = new Docente(nombreDocente, apellidoDocente, edadDocente, especialidad);
         Matricula matricula1 = new Matricula(estudiante1, curso1);
 
-        // Asignar valores con setters o entrada por consola
-        curso1.asignarDocente("Profesor López");
+        sc.nextLine(); // Limpiar el buffer
+
+        // Asignar docentes a cursos
+        curso1.asignarDocente("Profesor " + apellidoDocente); // Asignación automática con apellido
         curso2.asignarDocente("Profesor Pérez");
 
         // Mostrar detalles
@@ -23,13 +51,13 @@ public class Main {
         docente1.mostrarDatos();
         matricula1.mostrarDetalle();
 
-        // Evaluaciones
-        Evaluacion eval1 = new Evaluacion(8.5);
+        // Evaluación
+        System.out.print("Ingrese la nota del estudiante: ");
+        double nota = sc.nextDouble();
+        Evaluacion eval1 = new Evaluacion(nota);
         System.out.println("Nota obtenida: " + eval1.getResultado());
 
-
-
-        sc.close();
+        sc.close(); // Cerrar el scanner
 
     }
 }
