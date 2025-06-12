@@ -1,8 +1,9 @@
 @startuml
 'https://plantuml.com/class-diagram
 
-abstract class Curso{
+ class Curso{
 -Materia: String
+-Docente: String
 +mostrarResumen()
 +asignarDocente(String docente)
 }
@@ -10,6 +11,7 @@ class CursoRegular{
 +nota:String
 }
 class CursoCertificado{
+-precioBase: double
 +certificar():void
 +calcularPrecioFinal()
 +mostrarResumen()
@@ -41,7 +43,7 @@ class Main{
 }
 
 Curso <|-- CursoRegular
-CursoRegular --|> CursoCertificado
+CursoRegular <|-- CursoCertificado
 
 Estudiante --> Curso
 Docente --> Curso
