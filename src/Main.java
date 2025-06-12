@@ -34,6 +34,8 @@ public class Main {
         System.out.print("Ingrese el costo del curso certificado: ");
         double costoCursoCertificado = sc.nextDouble();
 
+
+
         // Crear objetos con datos del usuario
         CursoRegular curso1 = new CursoRegular(nombreCurso);
         CursoCertificado curso2 = new CursoCertificado(nombreCursoCertificado, costoCursoCertificado);
@@ -61,8 +63,9 @@ public class Main {
         double nota = sc.nextDouble();
         Evaluacion eval1 = new Evaluacion(nota);
         System.out.println("Nota obtenida: " + eval1.getResultado());
-        int opcion = sc.nextInt();
-        eval1.certificar(nota,opcion);
+        System.out.println("Cual fue tu curso: 1) Regular 2)Certificado" );
+        int opcion= sc.nextInt();
+        eval1.certificar(nota, opcion );
 
         sc.close(); // Cerrar el scanner
 
