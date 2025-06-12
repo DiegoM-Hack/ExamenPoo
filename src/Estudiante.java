@@ -10,22 +10,22 @@ public class Estudiante {
         this.edad = edad;
     }
 
-    public void mostrarDatos(){
-        System.out.println("Nombre: " + nombre);
-        System.out.println("Apellido: " + apellido);
-        System.out.println("Edad: " + edad);
+    public void mostrarDatos() {
+        System.out.println("Estudiante: " + nombre + ", Edad: " + edad );
+        if(validarEdad()){
+            System.out.println("Estudiante valido");
+        }else{
+            System.out.println("Estudiante invalido");
+        };
     }
 
-    public boolean validarEdad(int edad){
-        if(edad >= 13 && edad <= 60){
-            System.out.println("El edad esta en el rango");
+    public boolean validarEdad() {
+        if (edad >= 13 && edad <= 60){
             return true;
         }else {
-            System.out.println("El edad no es valido");
             return false;
         }
     }
-
 
 
 }

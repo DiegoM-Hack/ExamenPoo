@@ -5,15 +5,27 @@ public class Main {
 
         Scanner sc = new Scanner(System.in);
 
-        Estudiante estudiante1 = new Estudiante("Diego","Montaluisa",24);
-        Estudiante estudiante2 = new Estudiante("Daniel","Sapatanga",25);
-        Estudiante estudiante3 = new Estudiante("Camila","Lopez",19);
-        Estudiante estudiante4 = new Estudiante("Josselyn","Torres",23);
-        Estudiante estudiante5 = new Estudiante("Elian","Herrera",12);
+        // Objetos con valores nulos
+        CursoRegular curso1 = new CursoRegular("Matemáticas");
+        CursoCertificado curso2 = new CursoCertificado("Programación", 200);
+        Estudiante estudiante1 = new Estudiante("Juan","Montaluisa", 15);
+        Docente docente1 = new Docente("Diego","Lopez",34,"Matematicas");
+        Matricula matricula1 = new Matricula(estudiante1, curso1);
 
+        // Asignar valores con setters o entrada por consola
+        curso1.asignarDocente("Profesor López");
+        curso2.asignarDocente("Profesor Pérez");
 
+        // Mostrar detalles
+        curso1.mostrarResumen();
+        curso2.mostrarResumen();
+        estudiante1.mostrarDatos();
+        docente1.mostrarDatos();
+        matricula1.mostrarDetalle();
 
-
+        // Evaluaciones
+        Evaluacion eval1 = new Evaluacion(8.5);
+        System.out.println("Nota obtenida: " + eval1.getResultado());
 
 
 
