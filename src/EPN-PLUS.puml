@@ -37,6 +37,7 @@ class Matricula{
 class Evaluacion{
 -nota: int
 +getResultado()
++certificar()
 }
 class Main{
 + main(String[]) : void
