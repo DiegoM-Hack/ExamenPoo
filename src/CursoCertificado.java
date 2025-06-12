@@ -1,17 +1,18 @@
-public class CursoCertificado extends CursoRegular {
-    private double nota;
+class CursoCertificado extends CursoRegular {
+    private double precioBase;
 
-
-    public CursoCertificado(  double nota, double precio) {
-        super(precio);
-        this.nota = nota;
-
+    public CursoCertificado(String nombre, double precioBase) {
+        super(nombre);
+        this.precioBase = precioBase;
     }
 
-    public double calcularPrecioFinal(){
-        double total = getPrecio() *1.25;
-        return total;
+    public double calcularPrecioFinal() {
+        return precioBase * 1.25;
     }
 
-    public void mostrarResumen(){}
+    @Override
+    public void mostrarResumen() {
+        super.mostrarResumen();
+        System.out.println("Precio final: $" + calcularPrecioFinal());
+    }
 }

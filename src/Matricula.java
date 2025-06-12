@@ -1,18 +1,14 @@
-import java.util.List;
+class Matricula {
+    private Estudiante.Estudiante estudiante;
+    private Curso curso;
 
-public class Matricula {
-
-    private List<Estudiante> estudiantes;
-
-    public void registrarEvaluacion(Evaluacion evaluacion){
-
+    public Matricula(Estudiante.Estudiante estudiante, Curso curso) {
+        this.estudiante = estudiante;
+        this.curso = curso;
     }
 
-
-
-
-    public void mostrarDatos(){
-
+    public void mostrarDetalle() {
+        estudiante.mostrarDatos();
+        curso.mostrarResumen();
     }
-
 }

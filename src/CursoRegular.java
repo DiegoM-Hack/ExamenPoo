@@ -1,11 +1,6 @@
-public class CursoRegular {
-    private double precio;
-
-    public CursoRegular(double precio) {
-        this.precio = precio;
+class CursoRegular extends Curso {
+    public CursoRegular(String nombre) {
+        super(nombre);
     }
 
-    public double getPrecio() {
-        return precio;
-    }
 }
