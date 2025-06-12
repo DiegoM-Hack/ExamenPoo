@@ -1,3 +1,5 @@
+package Clases;
+
 public class Docente {
     private String nombre;
     private String apellido;

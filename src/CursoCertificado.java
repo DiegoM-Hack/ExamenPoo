@@ -1,4 +1,4 @@
-class CursoCertificado extends CursoRegular {
+public class CursoCertificado extends CursoRegular {
     private double precioBase;
 
     public CursoCertificado(String nombre, double precioBase) {

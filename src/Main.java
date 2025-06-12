@@ -1,3 +1,6 @@
+import Clases.Docente;
+import Clases.Estudiante;
+
 import java.util.Scanner;
 
 public class Main {
@@ -41,21 +44,25 @@ public class Main {
         sc.nextLine(); // Limpiar el buffer
 
         // Asignar docentes a cursos
-        curso1.asignarDocente("Profesor " + apellidoDocente); // Asignación automática con apellido
-        curso2.asignarDocente("Profesor Pérez");
+        curso1.asignarDocente( apellidoDocente); // Asignación automática con apellido
+        curso2.asignarDocente(" Pérez");
 
         // Mostrar detalles
         curso1.mostrarResumen();
         curso2.mostrarResumen();
         estudiante1.mostrarDatos();
+
         docente1.mostrarDatos();
         matricula1.mostrarDetalle();
+
 
         // Evaluación
         System.out.print("Ingrese la nota del estudiante: ");
         double nota = sc.nextDouble();
         Evaluacion eval1 = new Evaluacion(nota);
         System.out.println("Nota obtenida: " + eval1.getResultado());
+        int opcion = sc.nextInt();
+        eval1.certificar(nota,opcion);
 
         sc.close(); // Cerrar el scanner
 

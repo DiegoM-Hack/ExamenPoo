@@ -1,6 +1,6 @@
+package ClasesPadre;
 
-
-class Curso {
+public class Curso {
     protected String nombre;
     protected String docente;
 
@@ -13,6 +13,6 @@ class Curso {
     }
 
     public void mostrarResumen() {
-        System.out.println("Curso: " + nombre + ", Docente: " + (docente != null ? docente : "No asignado"));
+        System.out.println("ClasesPadre.Curso: " + nombre + ", Clases.Docente: " + (docente != null ? docente : "No asignado"));
     }
 }

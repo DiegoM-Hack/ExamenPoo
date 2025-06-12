@@ -1,4 +1,7 @@
-class Matricula {
+import Clases.Estudiante;
+import ClasesPadre.Curso;
+
+public class Matricula {
     private Estudiante estudiante;
     private Curso curso;
 

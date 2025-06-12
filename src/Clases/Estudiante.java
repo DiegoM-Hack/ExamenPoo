@@ -1,3 +1,5 @@
+package Clases;
+
 public class Estudiante {
     private String nombre;
     private String apellido;
@@ -11,11 +13,11 @@ public class Estudiante {
     }
 
     public void mostrarDatos() {
-        System.out.println("Estudiante: " + nombre + ", Edad: " + edad );
+        System.out.println("Clases.Estudiante: " + nombre + ", Edad: " + edad );
         if(validarEdad()){
-            System.out.println("Estudiante valido");
+            System.out.println("Clases.Estudiante valido");
         }else{
-            System.out.println("Estudiante invalido");
+            System.out.println("Clases.Estudiante invalido");
         };
     }
 
